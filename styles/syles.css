@@ -1,0 +1,54 @@
+:root {
+    margin:35px;
+    color: #465054;
+    font-size: 30px;
+}
+
+
+.title {
+    font-size: 50px;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input {
+    width: 300px;
+    height: 40px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+}
+
+.button {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: coral;
+    border: none;
+    font-weight: bolder;
+    font-size: 25px;
+
+}
+
+.clueAttempts {
+    margin-top: 30px;
+}
+
+.paragraph {
+    width: 90%;
+    height: 40px;
+    margin: 20px 0px;
+    border: solid;
+    padding: 10px;
+}

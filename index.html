@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./syles.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/syles.css" />
     <title>Evaluacion intermedia 2</title>
   </head>
   <body>
     <header>
-      <h1>Adivina el número</h1>
+      <h1 class="title">Adivina el número</h1>
     </header>
 
     <main>
-      <form action="">
+      <form action="" class="form">
         <label for="number">Introduce aquí tu número:</label>
-        <input type="number" id="number" name="number" class="js_input" />
-        <button class="js_btn">Prueba</button>
+        <input type="number" id="number" name="number" class="js_input input" />
+        <button class="js_btn button">Prueba</button>
       </form>
 
-      <section>
-        <p class="js_clue">Pista: Escribe el número y dale a Prueba</p>
-        <p class="js_attempts">Número de intentos:0</p>
+      <section class="clueAttempts">
+        <p class="js_clue paragraph">
+          Pista: Escribe el número y dale a Prueba
+        </p>
+        <p class="js_attempts paragraph">Número de intentos:0</p>
       </section>
     </main>
 
