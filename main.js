@@ -1,6 +1,5 @@
 'use strict';
 
-//Escuchar evento click en el botón
 //F generar random number
 //comparar input con random number
 //si es mayor, poner mensaje de mayor
@@ -13,7 +12,9 @@ const clue = document.querySelector('.js_clue');
 const attempts = document.querySelector('.js_attempts');
 
 
-
+function getRandomNumber(max) {
+    return Math.ceil(Math.random() * max);
+}
 
 
 
@@ -26,7 +27,8 @@ const attempts = document.querySelector('.js_attempts');
 
 function handleClick (ev){
     ev.preventDefault();
-   console.log('he clicado');
+    getRandomNumber(100);
+    console.log(getRandomNumber(100));
 }
 
 
