@@ -22,7 +22,7 @@
 
 He realizado las siguientes funciones:
 
-- Generar un número aleatorio
+- Generar un número aleatorio (esta función se ejecuta al cargar la página).
 - Comparar el número generado con el introducido por la usuaria y generar las diferentes acciones mediante condicionales.
 - Aumentar en 1 el número de intentos
 - Función manejadora de evento click botón de probar (al que añadí un listener) que ejecuta la función comparadora del número y la de aumento del número de intentos.
