@@ -4,6 +4,7 @@
 
 const inputNumber = document.querySelector('.js_input');
 const inputBtn = document.querySelector('.js_btn');
+const eraseBtn = document.querySelector('.js_eraseBtn');
 const clue = document.querySelector('.js_clue');
 const attemptsMsg = document.querySelector('.js_attempts');
 
@@ -52,3 +53,11 @@ function handleClick (ev){
 
 
 inputBtn.addEventListener('click', handleClick);
+
+function handleClickErase (ev){
+    ev.preventDefault();
+    inputNumber.value = '';
+}
+
+
+eraseBtn.addEventListener('click', handleClickErase);

@@ -43,6 +43,18 @@
 
 }
 
+.eraseBtn {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color:grey;
+    border: none;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
 .clueAttempts {
     margin-top: 30px;
 }
