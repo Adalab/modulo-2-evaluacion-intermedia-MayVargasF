@@ -22,10 +22,12 @@
 
 .input {
     width: 300px;
-    height: 40px;
+    height: 30px;
     background-color: lightgray;
     border: none;
     border-radius: 5px;
+    padding: 10px;
+    font-size: 25px;
 }
 
 .button {
@@ -51,4 +53,21 @@
     margin: 20px 0px;
     border: solid;
     padding: 10px;
+}
+
+.colorRedHigh {
+    color: #De382a;
+    background-color: #84e1e6;
+}
+
+.colorRedLow {
+    color: #De382a;
+    background-color: #F2e597;
+}
+
+
+.colorGreen {
+    color: #147f19;
+    background-color: #F2c497;
+
 }

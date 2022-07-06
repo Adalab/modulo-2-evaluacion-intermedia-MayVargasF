@@ -23,12 +23,16 @@ const numberGame = () => {
     
     if (playerNumber === randomNumber) {
         clue.innerHTML = "Has ganado campeona!!!";
+        clue.classList.add('colorGreen');
     } 
     else if (playerNumber < randomNumber  ) {
         clue.innerHTML = "Pista: demasiado bajo";
+        clue.classList.add('colorRedLow');
     } 
     else if (playerNumber > randomNumber) {
         clue.innerHTML = "Pista: demasiado alto";
+        clue.classList.remove('colorRedLow');
+        clue.classList.add('colorRedHigh');
     }
 }
 
