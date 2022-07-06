@@ -1,14 +1,11 @@
 'use strict';
 
-//comparar input con random number
-//si es mayor, poner mensaje de mayor
-//si es menor, poner mensaje menor
-//si es igual, poner mensaje ganadora
+//añadir un intento por cada click
 
 const inputNumber = document.querySelector('.js_input');
 const inputBtn = document.querySelector('.js_btn');
 const clue = document.querySelector('.js_clue');
-const attempts = document.querySelector('.js_attempts');
+const attemptsMsg = document.querySelector('.js_attempts');
 
 
 function getRandomNumber(max) {
@@ -35,12 +32,18 @@ const numberGame = () => {
     }
 }
 
+let attempt = 0;
 
+const attemptNumber =() => {
+    attempt += 1;
+}
 
 
 function handleClick (ev){
     ev.preventDefault();
     numberGame();
+    attemptNumber();
+    attemptsMsg.innerHTML = `Número de intentos: ${attempt}`;
 }
 
 
