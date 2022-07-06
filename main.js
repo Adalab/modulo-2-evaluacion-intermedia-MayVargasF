@@ -23,7 +23,7 @@ const numberGame = () => {
     console.log(playerNumber);
     
     if (playerNumber === randomNumber) {
-        clue.innerHTML = "Has ganado campeona!!!";
+        clue.innerHTML = "Has ganado campeona!!! Recarga la página para volver a jugar!";
         clue.classList.add('colorGreen');
     } 
     else if (playerNumber < randomNumber  ) {
