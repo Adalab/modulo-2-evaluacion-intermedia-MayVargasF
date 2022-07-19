@@ -1,68 +1,62 @@
-'use strict';
+"use strict";
 
-//añadir un intento por cada click
-
-const inputNumber = document.querySelector('.js_input');
-const inputBtn = document.querySelector('.js_btn');
-const eraseBtn = document.querySelector('.js_eraseBtn');
-const clue = document.querySelector('.js_clue');
-const attemptsMsg = document.querySelector('.js_attempts');
-
+const inputNumber = document.querySelector(".js_input");
+const inputBtn = document.querySelector(".js_btn");
+const eraseBtn = document.querySelector(".js_eraseBtn");
+const clue = document.querySelector(".js_clue");
+const attemptsMsg = document.querySelector(".js_attempts");
 
 function getRandomNumber(max) {
-    return Math.ceil(Math.random() * max);
+  return Math.ceil(Math.random() * max);
 }
 
 const randomNumber = getRandomNumber(100);
-console.log (randomNumber);
-
+console.log(randomNumber);
 
 const numberGame = () => {
+  const playerNumber = parseInt(inputNumber.value);
+  console.log(playerNumber);
 
-    const playerNumber = parseInt(inputNumber.value);
-    console.log(playerNumber);
-    
-    if (playerNumber === randomNumber) {
-        clue.innerHTML = "Has ganado campeona!!! Recarga la página para volver a jugar!";
-        clue.classList.add('colorGreen');
-    } 
-    else if (playerNumber < randomNumber  ) {
-        clue.innerHTML = "Pista: demasiado bajo";
-        clue.classList.add('colorRedLow');
-    } 
-    else if (playerNumber > randomNumber && playerNumber < 100 ) {
-        clue.innerHTML = "Pista: demasiado alto";
-        clue.classList.remove('colorRedLow');
-        clue.classList.add('colorRedHigh');
-    }
-    else if (playerNumber > 100) {
-        clue.innerHTML = "El número debe estar entre 1 y 100";
-        clue.classList.remove('colorRedLow');
-        clue.classList.add('colorRedHigh');
-    }
-}
+  if (playerNumber === randomNumber) {
+    clue.innerHTML =
+      "Has ganado campeona!!! Recarga la página para volver a jugar!";
+    clue.classList.add("colorGreen");
+  } else if (playerNumber < randomNumber) {
+    clue.innerHTML = "Pista: demasiado bajo";
+    clue.classList.add("colorRedLow");
+  } else if (playerNumber > randomNumber && playerNumber < 100) {
+    clue.innerHTML = "Pista: demasiado alto";
+    clue.classList.remove("colorRedLow");
+    clue.classList.add("colorRedHigh");
+  } else if (playerNumber > 100) {
+    clue.innerHTML = "El número debe estar entre 1 y 100";
+    clue.classList.remove("colorRedLow");
+    clue.classList.add("colorRedHigh");
+  } else if (inputNumber.value === "") {
+    clue.innerHTML = "Debes introducir un número para jugar.";
+    clue.classList.remove("colorRedLow");
+    clue.classList.add("colorRedHigh");
+  }
+};
 
 let attempt = 0;
 
-const attemptNumber =() => {
-    attempt += 1;
+const attemptNumber = () => {
+  attempt += 1;
+};
+
+function handleClick(ev) {
+  ev.preventDefault();
+  numberGame();
+  attemptNumber();
+  attemptsMsg.innerHTML = `Número de intentos: ${attempt}`;
 }
 
+inputBtn.addEventListener("click", handleClick);
 
-function handleClick (ev){
-    ev.preventDefault();
-    numberGame();
-    attemptNumber();
-    attemptsMsg.innerHTML = `Número de intentos: ${attempt}`;
+function handleClickErase(ev) {
+  ev.preventDefault();
+  inputNumber.value = "";
 }
 
-
-inputBtn.addEventListener('click', handleClick);
-
-function handleClickErase (ev){
-    ev.preventDefault();
-    inputNumber.value = '';
-}
-
-
-eraseBtn.addEventListener('click', handleClickErase);
+eraseBtn.addEventListener("click", handleClickErase);
