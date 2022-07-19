@@ -30,8 +30,13 @@ const numberGame = () => {
         clue.innerHTML = "Pista: demasiado bajo";
         clue.classList.add('colorRedLow');
     } 
-    else if (playerNumber > randomNumber) {
+    else if (playerNumber > randomNumber && playerNumber < 100 ) {
         clue.innerHTML = "Pista: demasiado alto";
+        clue.classList.remove('colorRedLow');
+        clue.classList.add('colorRedHigh');
+    }
+    else if (playerNumber > 100) {
+        clue.innerHTML = "El número debe estar entre 1 y 100";
         clue.classList.remove('colorRedLow');
         clue.classList.add('colorRedHigh');
     }
