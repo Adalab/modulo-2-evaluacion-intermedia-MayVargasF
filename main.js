@@ -5,6 +5,11 @@ const inputBtn = document.querySelector(".js_btn");
 const eraseBtn = document.querySelector(".js_eraseBtn");
 const clue = document.querySelector(".js_clue");
 const attemptsMsg = document.querySelector(".js_attempts");
+const resetBtn = document.querySelector(".js_resetBtn");
+
+function clueMsg(msg) {
+  clue.innerHTML = msg;
+}
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
@@ -18,22 +23,21 @@ const numberGame = () => {
   console.log(playerNumber);
 
   if (playerNumber === randomNumber) {
-    clue.innerHTML =
-      "Has ganado campeona!!! Recarga la página para volver a jugar!";
+    clueMsg("Has ganado campeona!!! Recarga la página para volver a jugar!");
     clue.classList.add("colorGreen");
   } else if (playerNumber < randomNumber) {
-    clue.innerHTML = "Pista: demasiado bajo";
+    clueMsg("Pista: demasiado bajo");
     clue.classList.add("colorRedLow");
   } else if (playerNumber > randomNumber && playerNumber < 100) {
-    clue.innerHTML = "Pista: demasiado alto";
+    clueMsg("Pista: demasiado alto");
     clue.classList.remove("colorRedLow");
     clue.classList.add("colorRedHigh");
   } else if (playerNumber > 100) {
-    clue.innerHTML = "El número debe estar entre 1 y 100";
+    clueMsg("El número debe estar entre 1 y 100");
     clue.classList.remove("colorRedLow");
     clue.classList.add("colorRedHigh");
   } else if (inputNumber.value === "") {
-    clue.innerHTML = "Debes introducir un número para jugar.";
+    clueMsg("Debes introducir un número para jugar.");
     clue.classList.remove("colorRedLow");
     clue.classList.add("colorRedHigh");
   }
@@ -60,3 +64,17 @@ function handleClickErase(ev) {
 }
 
 eraseBtn.addEventListener("click", handleClickErase);
+
+function handleClickReset(ev) {
+  ev.preventDefault();
+  clue.classList.remove("colorRedLow");
+  clue.classList.remove("colorRedHigh");
+  clue.classList.remove("colorGreen");
+  inputNumber.value = "";
+  clueMsg("Pista: Escribe el número y dale a Prueba");
+  attemptNumber();
+  attempt = 0;
+  attemptsMsg.innerHTML = `Número de intentos: ${attempt}`;
+}
+
+resetBtn.addEventListener("click", handleClickReset);
